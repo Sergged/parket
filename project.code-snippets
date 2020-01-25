@@ -1,0 +1,915 @@
+{
+	// Place your snippets for html here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	/* #region */
+	// Action Bar
+	"{NS} Action Bar": {
+		"scope": "html",
+		"prefix": "ActionBar",
+		"body": [
+			"<ActionBar title=\"${1:PageName}\" icon=\"\">",
+			"  <NavigationButton text=\"Back\" icon=\"\" (tap)=\"\"></NavigationButton>",
+			"  <ActionItem text=\"\"",
+			"              ${2|icon=\"\",ios.systemIcon=\"\" android.systemIcon=\"\"|}",
+			"              ios.position=\"${3|left,right|}\"",
+			"              android.position=\"${4|actionBar,actionBarIfRoom,popup|}\">",
+			"  </ActionItem>",
+			"  $0",
+			"</ActionBar>",
+		],
+	},
+	/* #endregion */
+	// Layouts
+	"{NS} Stack Layout": {
+		"scope": "html",
+		"prefix": "StackLayout",
+		"body": [
+			"<StackLayout orientation=\"${1|vertical,horizontal|}\">",
+			"  $0",
+			"</StackLayout>"
+		],
+		"description": "The StackLayout stacks its child elements below or beside each other, depending on its orientation. It is very useful to create lists."
+	},
+	"{NS} Flexbox Layout": {
+		"scope": "html",
+		"prefix": "FlexboxLayout",
+		"body": [
+			"<FlexboxLayout>",
+			"  $0",
+			"</FlexboxLayout>"
+		],
+		"description": "The FlexboxLayout is a non-conforming implementation of the CSS Flexible Box Layout based on an existing Apache-2 licensed flexbox implementation hosted on github.com/google/flexbox-layout."
+	},
+	"{NS} Stack Layout Horizontal": {
+		"scope": "html",
+		"prefix": "NSstack_horizontal",
+		"body": [
+			"<StackLayout orientation=\"horizontal\">",
+			"    ",
+			"</StackLayout>"
+		],
+		"description": "The StackLayout stacks its child elements below or beside each other, depending on its orientation. It is very useful to create lists."
+	},
+	"{NS} Wrap Layout": {
+		"scope": "html",
+		"prefix": "WrapLayout",
+		"body": [
+			"<WrapLayout orientation=\"${1|horizontal,vertical|}\"",
+			"            itemWidth=\"${2:number}\"",
+			"            itemHeight=\"${3:number}\">",
+			"  $0",
+			"</WrapLayout>"
+		]
+	},
+	"{NS} Absolute Layout": {
+		"scope": "html",
+		"prefix": "NSabsolute",
+		"body": [
+			"<AbsoluteLayout>",
+			"  $0",
+			"</AbsoluteLayout>"
+		],
+		"description": "The AbsoluteLayout is the simplest layout in NativeScript. It uses absolute left-top coordinates to position its children. The AbsoluteLayout will not enforce any layout coNStraints on its children and will not resize them at runtime when its size changes"
+	},
+	"{NS} Dock Layout": {
+		"scope": "html",
+		"prefix": "DockLayout",
+		"body": [
+			"<DockLayout stretchLastChild=\"${1|true,false|}\">",
+			"  <!-- <Example dock=\"${2|top,right,bottom,left|}\"></Example> -->",
+			"  $0",
+			"</DockLayout>"
+		],
+		"description": "The DockLayout is a layout that provides a docking mechanism for child elements to the left, right, top, bottom or center of the layout. To define the docking side of a child element, use its dock property. To dock a child element to the center of the DockLayout, it must be the last child of the DockLayout and the stretchLastChild property of the DockLayout must be set to true."
+	},
+	"{NS} Grid Layout": {
+		"scope": "html",
+		"prefix": "GridLayout",
+		"body": [
+			"<GridLayout rows=\"$1\" colums=\"$2\">",
+			"  $0",
+			"</GridLayout>"
+		]
+	},
+	"{NS} Grid Layout 2x2": {
+		"scope": "html",
+		"prefix": "NSgrid_2x2",
+		"body": [
+			"<GridLayout rows=\"*, *\" colums=\"*, *\">",
+			"    <Label text=\"0, 0\" row=\"0\" col=\"0\" />",
+			"    <Label text=\"0, 1\" row=\"0\" col=\"1\" />",
+			"    <Label text=\"1, 0\" row=\"1\" col=\"0\" />",
+			"    <Label text=\"1, 1\" row=\"1\" col=\"1\" />",
+			"</GridLayout>"
+		]
+	},
+	"{NS} Grid Layout 2x2 Automatic Width/Height": {
+		"scope": "html",
+		"prefix": "NSgrid_2x2_auto",
+		"body": [
+			"<GridLayout rows=\"auto, auto\" colums=\"auto, auto\">",
+			"    <Label text=\"0, 0\" row=\"0\" col=\"0\" />",
+			"    <Label text=\"0, 1\" row=\"0\" col=\"1\" />",
+			"    <Label text=\"1, 0\" row=\"1\" col=\"0\" />",
+			"    <Label text=\"1, 1\" row=\"1\" col=\"1\" />",
+			"</GridLayout>"
+		]
+	},
+	"{NS} Grid Layout 3x3 ": {
+		"scope": "html",
+		"prefix": "NSgrid_3x3",
+		"body": [
+			"<GridLayout rows=\"*, *, *\" colums=\"*, *, *\">",
+			"    <Label text=\"0, 0\" row=\"0\" col=\"0\" />",
+			"    <Label text=\"0, 1\" row=\"0\" col=\"1\" />",
+			"    <Label text=\"0, 2\" row=\"0\" col=\"2\" />",
+			"    <Label text=\"1, 0\" row=\"1\" col=\"0\" />",
+			"    <Label text=\"1, 1\" row=\"1\" col=\"1\" />",
+			"    <Label text=\"1, 2\" row=\"1\" col=\"2\" />",
+			"    <Label text=\"2, 0\" row=\"2\" col=\"0\" />",
+			"    <Label text=\"2, 1\" row=\"2\" col=\"1\" />",
+			"    <Label text=\"2, 2\" row=\"2\" col=\"2\" />",
+			"</GridLayout>"
+		]
+	},
+	"{NS} Grid Layout 3x3 Automatic Width/Height": {
+		"scope": "html",
+		"prefix": "NSgrid_3x3_auto",
+		"body": [
+			"<GridLayout rows=\"auto, auto, auto\" colums=\"auto, auto, auto\">",
+			"    <Label text=\"0, 0\" row=\"0\" col=\"0\" />",
+			"    <Label text=\"0, 1\" row=\"0\" col=\"1\" />",
+			"    <Label text=\"0, 2\" row=\"0\" col=\"2\" />",
+			"    <Label text=\"1, 0\" row=\"1\" col=\"0\" />",
+			"    <Label text=\"1, 1\" row=\"1\" col=\"1\" />",
+			"    <Label text=\"1, 2\" row=\"1\" col=\"2\" />",
+			"    <Label text=\"2, 0\" row=\"2\" col=\"0\" />",
+			"    <Label text=\"2, 1\" row=\"2\" col=\"1\" />",
+			"    <Label text=\"2, 2\" row=\"2\" col=\"2\" />",
+			"</GridLayout>"
+		]
+	},
+	"{NS} Grid Layout 4x3 ": {
+		"scope": "html",
+		"prefix": "NSgrid_4x3",
+		"body": [
+			"<GridLayout rows=\"*, *, *, *\" colums=\"*, *, *\">",
+			"    <Label text=\"0, 0\" row=\"0\" col=\"0\" />",
+			"    <Label text=\"0, 1\" row=\"0\" col=\"1\" />",
+			"    <Label text=\"0, 2\" row=\"0\" col=\"2\" />",
+			"    <Label text=\"1, 0\" row=\"1\" col=\"0\" />",
+			"    <Label text=\"1, 1\" row=\"1\" col=\"1\" />",
+			"    <Label text=\"1, 2\" row=\"1\" col=\"2\" />",
+			"    <Label text=\"2, 0\" row=\"2\" col=\"0\" />",
+			"    <Label text=\"2, 1\" row=\"2\" col=\"1\" />",
+			"    <Label text=\"2, 2\" row=\"2\" col=\"2\" />",
+			"    <Label text=\"3, 0\" row=\"3\" col=\"0\" />",
+			"    <Label text=\"3, 1\" row=\"3\" col=\"1\" />",
+			"    <Label text=\"3, 2\" row=\"3\" col=\"2\" />",
+			"</GridLayout>"
+		]
+	},
+	"{NS} Grid Layout 4x3 Automatic Width/Height": {
+		"scope": "html",
+		"prefix": "NSgrid_4x3_auto",
+		"body": [
+			"<GridLayout rows=\"auto, auto, auto, auto\" colums=\"auto, auto, auto\">",
+			"    <Label text=\"0, 0\" row=\"0\" col=\"0\" />",
+			"    <Label text=\"0, 1\" row=\"0\" col=\"1\" />",
+			"    <Label text=\"0, 2\" row=\"0\" col=\"2\" />",
+			"    <Label text=\"1, 0\" row=\"1\" col=\"0\" />",
+			"    <Label text=\"1, 1\" row=\"1\" col=\"1\" />",
+			"    <Label text=\"1, 2\" row=\"1\" col=\"2\" />",
+			"    <Label text=\"2, 0\" row=\"2\" col=\"0\" />",
+			"    <Label text=\"2, 1\" row=\"2\" col=\"1\" />",
+			"    <Label text=\"2, 2\" row=\"2\" col=\"2\" />",
+			"    <Label text=\"3, 0\" row=\"3\" col=\"0\" />",
+			"    <Label text=\"3, 1\" row=\"3\" col=\"1\" />",
+			"    <Label text=\"3, 2\" row=\"3\" col=\"2\" />",
+			"</GridLayout>"
+		]
+	},
+	"{NS} Grid Layout 4x4": {
+		"scope": "html",
+		"prefix": "NSgrid_4x4",
+		"body": [
+			"<GridLayout rows=\"*, *, *, *\" colums=\"*, *, *, *\">",
+			"    <Label text=\"0, 0\" row=\"0\" col=\"0\" />",
+			"    <Label text=\"0, 1\" row=\"0\" col=\"1\" />",
+			"    <Label text=\"0, 2\" row=\"0\" col=\"2\" />",
+			"    <Label text=\"0, 3\" row=\"0\" col=\"3\" />",
+			"    <Label text=\"1, 0\" row=\"1\" col=\"0\" />",
+			"    <Label text=\"1, 1\" row=\"1\" col=\"1\" />",
+			"    <Label text=\"1, 2\" row=\"1\" col=\"2\" />",
+			"    <Label text=\"1, 3\" row=\"1\" col=\"3\" />",
+			"    <Label text=\"2, 0\" row=\"2\" col=\"0\" />",
+			"    <Label text=\"2, 1\" row=\"2\" col=\"1\" />",
+			"    <Label text=\"2, 2\" row=\"2\" col=\"2\" />",
+			"    <Label text=\"2, 3\" row=\"2\" col=\"3\" />",
+			"    <Label text=\"3, 0\" row=\"3\" col=\"0\" />",
+			"    <Label text=\"3, 1\" row=\"3\" col=\"1\" />",
+			"    <Label text=\"3, 2\" row=\"3\" col=\"2\" />",
+			"    <Label text=\"3, 3\" row=\"3\" col=\"3\" />",
+			"</GridLayout>"
+		]
+	},
+	"{NS} Grid Layout 4x4 Automatic Width/Height": {
+		"scope": "html",
+		"prefix": "NSgrid_4x4_auto",
+		"body": [
+			"<GridLayout rows=\"auto, auto, auto, auto\" colums=\"auto, auto, auto, auto\">",
+			"    <Label text=\"0, 0\" row=\"0\" col=\"0\" />",
+			"    <Label text=\"0, 1\" row=\"0\" col=\"1\" />",
+			"    <Label text=\"0, 2\" row=\"0\" col=\"2\" />",
+			"    <Label text=\"0, 3\" row=\"0\" col=\"3\" />",
+			"    <Label text=\"1, 0\" row=\"1\" col=\"0\" />",
+			"    <Label text=\"1, 1\" row=\"1\" col=\"1\" />",
+			"    <Label text=\"1, 2\" row=\"1\" col=\"2\" />",
+			"    <Label text=\"1, 3\" row=\"1\" col=\"3\" />",
+			"    <Label text=\"2, 0\" row=\"2\" col=\"0\" />",
+			"    <Label text=\"2, 1\" row=\"2\" col=\"1\" />",
+			"    <Label text=\"2, 2\" row=\"2\" col=\"2\" />",
+			"    <Label text=\"2, 3\" row=\"2\" col=\"3\" />",
+			"    <Label text=\"3, 0\" row=\"3\" col=\"0\" />",
+			"    <Label text=\"3, 1\" row=\"3\" col=\"1\" />",
+			"    <Label text=\"3, 2\" row=\"3\" col=\"2\" />",
+			"    <Label text=\"3, 3\" row=\"3\" col=\"3\" />",
+			"</GridLayout>"
+		]
+	},
+	// #endregion
+	// Views
+	"{NS} Scroll View": {
+		"scope": "html",
+		"prefix": "ScrollView",
+		"body": [
+			"<ScrollView [isScrollEnabled]=\"${1|true,false|}\"",
+			"            (scroll)=\"onScroll(\\$event)\"",
+			"            orientation=\"${2|horizontal,vertical|}\">",
+			"  $0",
+			"</ScrollView>"
+		]
+	},
+	"{NS} List View": {
+		"scope": "html",
+		"prefix": "ListView",
+		"body": [
+			"<ListView [items]=\"${1:items}\"",
+			"          (itemTap)=\"onItemTap(\\$event)\"${2:",
+			"          (setupItemView)=\"onSetupItemView(\\$event)\"}>",
+			"  <ng-template let-item=\"item\" let-i=\"index\"",
+			"               let-odd=\"odd\" let-even=\"even\">",
+			"    <${3|StackLayout,GridLayout,DockLayout,WrapLayout,AbsoluteLayout|}>",
+			"      <!-- The item template can only have a single root view container (e.g. GridLayout, StackLayout, etc.)-->",
+			"      $0",
+			"    </$3>",
+			"  </ng-template>",
+			"</ListView>"
+		]
+	},
+	"{NS} Web View": {
+		"scope": "html",
+		"prefix": "WebView",
+		"body": [
+			"<WebView [src]=\"${1|someUrl,pathToLocalFile,htmlString|}\"></WebView>",
+		]
+	},
+	"{NS} Repeater": {
+		"scope": "html",
+		"prefix": "NSrepeater",
+		"body": [
+			"<Repeater items=\"{{  }}\">",
+			"    <Repeater.itemsLayout>",
+			"        <StackLayout />",
+			"    </Repeater.itemsLayout>",
+			"    <Repeater.itemTemplate>",
+			"        ",
+			"    </Repeater.itemTemplate>",
+			"</Repeater>"
+		]
+	},
+	// Widgets
+	"{NS} Page": {
+		"scope": "html",
+		"prefix": "NSpage",
+		"body": [
+			"<Page loaded=\"onLoaded\" navigatedTo=\"onNavigatedTo\">",
+			"    ",
+			"</Page>"
+		]
+	},
+	"{NS} Image": {
+		"scope": "html",
+		"prefix": "Image",
+		"body": [
+			"<Image src=\"${2|res,font|}://$3\" stretch=\"${1|none,fill,aspectFit,aspectFill|}\"></Image>",
+		],
+		"description": "The stretch functionality allows us to describe how content is resized to fill its allocated space. The available options for this property are as follow: \n none - the image preserves its original size \n fill - the image is resized to fill the destination dimensions. In this case, the aspect ratio is not preserved. \n aspectFit - the image is resized to fit the destination dimensions while it preserves its native aspect ratio. If the aspect ratio of the destination rectangle differs from the image, the image will be clipped to fit in the destination. \n aspectFill - the image is resized to fill in the destination dimensions while it preserves its native aspect ratio. \n The default value for this property is aspectFit."
+	},
+	"{NS} Label": {
+		"scope": "html",
+		"prefix": "Label",
+		"body": [
+			"<Label text=\"$3\" textWrap=\"${1|true,false|}\"${2:",
+			"       (textChange)=\"${4:onTextChanged(\\$event)}\"}></Label>",
+		]
+	},
+	"{NS} Button": {
+		"scope": "html",
+		"prefix": "Button",
+		"body": [
+			"<Button text=\"$1\" (tap)=\"$2\">$0</Button>",
+		]
+	},
+	"{NS} Text Field": {
+		"scope": "html",
+		"prefix": "TextField",
+		"body": [
+			"<TextField [text]=\"\"",
+			"           [secure]=\"${1|false,true|}\"",
+			"           (returnPress)=\"onReturnPress(\\$event)\"",
+			"           (focus)=\"onFocus(\\$event)\"",
+			"           (blur)=\"onBlur(\\$event)\"",
+			"           hint=\"Enter date\"",
+			"           keyboardType=\"${2|datetime,phone,number,url,email|}\"",
+			"           returnKeyType=\"${3|done,next,go,search,send|}\"",
+			"           autocorrect=\"${4|false,true|}\"",
+			"           maxLength=\"10\">",
+			"</TextField>"
+		],
+		"description": "TextField provides multiple properties and several events for handling the user input and interaction. To submit a value use the returnPress event along with the returnKeyType property. To handle a TextFiled being focused use the focus event. To handle an interaction when the user leaves TextField use the blur event. To explicitly show and hide a keyboard, we can call the methods focus and dismissSoftInput."
+	},
+	"{NS} Password Field": {
+		"scope": "html",
+		"prefix": "NSpassword",
+		"body": [
+			"<TextField hint=\"Enter your password.\" text=\"{{  }}\" secure=\"true\" />",
+			""
+		]
+	},
+	"{NS} TextView": {
+		"scope": "html",
+		"prefix": "TextView",
+		"body": [
+			"<TextView hint=\"\" text=\"\" [editable]=\"${1|true,false|}\"></TextView>",
+		]
+	},
+	"{NS} SearchBar": {
+		"scope": "html",
+		"prefix": "SearchBar",
+		"body": [
+			"<SearchBar hint=\"Type for Search\"",
+			"           textFieldBackgroundColor=\"white\"",
+			"           textFieldHintColor=\"gray\"",
+			"           [text]=\"searchPhrase\"",
+			"           (textChange)=\"onTextChanged(\\$event)\"",
+			"           (clear)=\"onClear(\\$event)\"",
+			"           (submit)=\"onSubmit(\\$event)\">",
+			"</SearchBar>"
+		]
+	},
+	"{NS} Switch": {
+		"scope": "html",
+		"prefix": "Switch",
+		"body": [
+			"<Switch [checked]=\"${1|true,false|}\"",
+			"        [isEnabled]=\"true\"",
+			"        (checkedChange)=\"onCheckedChange(\\$event)\">",
+			"</Switch>",
+		]
+	},
+	"{NS} Progress Bar": {
+		"scope": "html",
+		"prefix": "Progress",
+		"body": [
+			"<Progress [value]=\"${1:progressValue}\"",
+			"          (valueChanged)=\"onValueChanged(\\$event)\"",
+			"          maxValue=\"$2\">",
+			"</Progress>"
+		]
+	},
+	"{NS} Slider": {
+		"scope": "html",
+		"prefix": "Slider",
+		"body": [
+			"<Slider minValue=\"$1\"",
+			"        maxValue=\"$2\"",
+			"        value=\"$3\"",
+			"        (valueChange)=\"onSliderValueChange(\\$event)\">",
+			"</Slider>",
+		]
+	},
+	"{NS} Date Picker": {
+		"scope": "html",
+		"prefix": "DatePicker",
+		"body": [
+			"<DatePicker date=\"${1:js-date}\"></DatePicker>",
+		]
+	},
+	"{NS} Time Picker": {
+		"scope": "html",
+		"prefix": "TimePicker",
+		"body": [
+			"<TimePicker hour=\"\" minute=\"\"",
+			"            (timeChange)=\"onTimeChanged(\\$event)\"></TimePicker>",
+		]
+	},
+	"{NS} List Picker": {
+		"scope": "html",
+		"prefix": "ListPicker",
+		"body": [
+			"<ListPicker [items]=\"${1:items}\"${2:",
+			"            (selectedIndexChange)=\"${3:selectedIndexChanged(\\$event)}\"}",
+			"            selectedIndex=\"${4:0}\">",
+			"</ListPicker>"
+		]
+	},
+	"{NS} Activity Indicator": {
+		"scope": "html",
+		"prefix": "ActivityIndicator",
+		"body": [
+			"<ActivityIndicator [busy]=\"${1:boolean}\"",
+			"                   (busyChange)=\"${2:onBusyChanged(\\$event)}\"",
+			"                   height=\"100\"",
+			"                   width=\"100\">",
+			"</ActivityIndicator>"
+		]
+	},
+	"{NS} Segmented Bar": {
+		"scope": "html",
+		"prefix": "SegmentedBar",
+		"body": [
+			"<SegmentedBar [items]=\"\"",
+			"              (selectedIndexChange)=\"onSelectedIndexChange(\\$event)\"",
+			"              selectedIndex=\"0\">",
+			"</SegmentedBar>",
+			"<!-- <Example [visibility]=\"boolean\"></Example> -->",
+			"$0",
+		]
+	},
+	"{NS} Border": {
+		"scope": "html",
+		"prefix": "NSborder",
+		"body": [
+			"<Border borderRadius=\"\" borderWidth=\"\" borderColor=\"#000000\">",
+			"    $3",
+			"</Border>"
+		]
+	},
+	"{NS} Action Item": {
+		"scope": "html",
+		"prefix": "ActionItem",
+		"body": [
+			"<ActionItem text=\"\"",
+			"            ${2|icon=\"\",ios.systemIcon=\"\" android.systemIcon=\"\"|}",
+			"            ios.position=\"${3|left,right|}\"",
+			"            android.position=\"${4|actionBar,actionBarIfRoom,popup|}\">",
+			"  $0",
+			"</ActionItem>",
+		]
+	},
+	"{NS} Navigation button": {
+		"scope": "html",
+		"prefix": "NavigationButton",
+		"body": [
+			"<NavigationButton text=\"${1:Back}\"",
+			"                  ${2|icon=\"\",ios.systemIcon=\"\" android.systemIcon=\"\"|}",
+			"                  (tap)=\"\">",
+			"</NavigationButton>",
+		]
+	},
+	// Bottom navigation and Tabs
+	"{NS} Bottom navigation": {
+		"scope": "html",
+		"prefix": "BottomNavigation",
+		"body": [
+			"<BottomNavigation selectedIndex=\"0\"",
+			"                  (selectedIndexChanged)=\"onSelectedIndexChanged(\\$event)\">",
+			"  $0",
+			"</BottomNavigation>"
+		],
+		"description": "The BottomNavigation component provides a simple way to navigate between different views while providing common UI for both iOS and Android platforms. The recommended scenario suitable for BottomNavigation is a high level navigation with 3 to 5 tabs each with separate function."
+	},
+	"{NS} Tab strip": {
+		"scope": "html",
+		"prefix": "TabStrip",
+		"body": [
+			"<TabStrip iosIconRenderingMode=\"${1|automatic,alwaysOriginal|}\">",
+			"  <TabStripItem title=\"\" iconSource=\"${2|res,font|}://$3\">",
+			"    $0",
+			"  </TabStripItem>",
+			"</TabStrip>"
+		],
+		"description": "The TabStrip for BottomNavigation. The TabStrip which defines and rendres the bottom bar and its TabStripItem components."
+	},
+	"{NS} Tab strip item": {
+		"scope": "html",
+		"prefix": "TabStripItem",
+		"body": [
+			"<TabStripItem title=\"\" iconSource=\"${1|res,font|}://$2\">",
+			"  $0",
+			"</TabStripItem>"
+		],
+		"description": "The TabStripItem for TabStrip, BottomNavigation. The TabStrip which defines and rendres the bottom bar and its TabStripItem components."
+	},
+	"{NS} Tab content item": {
+		"scope": "html",
+		"prefix": "TabContentItem",
+		"body": [
+			"<TabContentItem>",
+			"  $0",
+			"</TabContentItem>"
+		],
+		"description": "Multiple TabContentItem components which total number should be equal to the number of the tabs (TabStripItem components). Each TabContentItem acts as a container for your tab content."
+	},
+	"{NS} Tabs": {
+		"scope": "html",
+		"prefix": "Tabs",
+		"body": [
+			"<Tabs selectedIndex=\"0\"",
+			"      swipeEnabled=\"${1|true,false|}\"",
+			"      offscreenTabLimit=\"1\"",
+			"      tabsPosition=\"${2|top,bottom|}\"",
+			"      (selectedIndexChanged)=\"onSelectedIndexChanged(\\$event)\"",
+			"  $0",
+			"</Tabs>"
+		],
+		"description": "The Tabs component provides a simple way to navigate between different views while providing common UI for both iOS and Android platforms. The recommended scenario suitable for Tabs is a mid level navigation."
+	},
+	// Attributes
+	"{NS} Color Attribute": {
+		"scope": "html",
+		"prefix": "color",
+		"body": "color=\"\""
+	},
+	"{NS} Left Attribute": {
+		"scope": "html",
+		"prefix": "left",
+		"body": "left=\"$0\""
+	},
+	"{NS} Right Attribute": {
+		"scope": "html",
+		"prefix": "right",
+		"body": "right=\"$0\""
+	},
+	"{NS} Top Attribute": {
+		"scope": "html",
+		"prefix": "top",
+		"body": "top=\"$0\""
+	},
+	"{NS} Bottom Attribute": {
+		"scope": "html",
+		"prefix": "bottom",
+		"body": "bottom=\"$0\""
+	},
+	"{NS} Text Attribute": {
+		"scope": "html",
+		"prefix": "text",
+		"body": "text=\"$0\""
+	},
+	"{NS} Margin Attribute": {
+		"scope": "html",
+		"prefix": "margin",
+		"body": "margin=\"\""
+	},
+	"{NS} Opacity Attribute": {
+		"scope": "html",
+		"prefix": "opacity",
+		"body": "opacity=\"\""
+	},
+	"{NS} Background Color Attribute": {
+		"scope": "html",
+		"prefix": "backgroundColor",
+		"body": "backgroundColor=\"$0\""
+	},
+	"{NS} Background Image Attribute": {
+		"scope": "html",
+		"prefix": "backgroundImage",
+		"body": "backgroundImage=\"$0\""
+	},
+	"{NS} Border Color Attribute": {
+		"scope": "html",
+		"prefix": "borderColor",
+		"body": "borderColor=\"$0\""
+	},
+	"{NS} Border Width Attribute": {
+		"scope": "html",
+		"prefix": "borderWidth",
+		"body": "borderWidth=\"$0\""
+	},
+	"{NS} IOS Safe Area Attribute": {
+		"scope": "html",
+		"prefix": "iosOverflowSafeArea",
+		"body": "iosOverflowSafeArea=\"true\""
+	},
+	"{NS} Translate X Attribute": {
+		"scope": "html",
+		"prefix": "translateX",
+		"body": "translateX=\"\""
+	},
+	"{NS} Translate Y Attribute": {
+		"scope": "html",
+		"prefix": "translateY",
+		"body": "translateY=\"\""
+	},
+	"{NS} xmlns Attribute": {
+		"scope": "html",
+		"prefix": "xmlns",
+		"body": "xmlns:=\"\""
+	},
+	"{NS} action Bar Hidden Attribute": {
+		"scope": "html",
+		"prefix": "actionBarHidden",
+		"body": "actionBarHidden=\"true\""
+	},
+	"{NS} Icon Attribute": {
+		"scope": "html",
+		"prefix": "icon",
+		"body": "icon=\"${1|res,font|}://\""
+	},
+	"{NS} System Icon Attributes": {
+		"scope": "html",
+		"prefix": "systemIcon",
+		"body": "ios.systemIcon=\"\" android.systemIcon=\"\""
+	},
+	"{NS} Text Wrap Attribute": {
+		"scope": "html",
+		"prefix": "wrap",
+		"body": "textWrap=\"true\""
+	},
+	"{NS} Horizontal Alignment Attribute": {
+		"scope": "html",
+		"prefix": "horizontalAlignment",
+		"body": "horizontalAlignment=\"${1|left,center,right|}\""
+	},
+	"{NS} Vertical Alignment Attribute": {
+		"scope": "html",
+		"prefix": "verticalAlignment",
+		"body": "verticalAlignment=\"${1|top,center,bottom|}\""
+	},
+	"{NS} Visibility Attribute": {
+		"scope": "html",
+		"prefix": "visibility",
+		"body": "visibility=\"{{ isItemVisible ? 'visible' : 'collapsed' }}\""
+	},
+	"{NS} Stretch Attribute": {
+		"scope": "html",
+		"prefix": "stretch",
+		"body": "stretch=\"fill\""
+	},
+	"{NS} Keyboard Type Attribute": {
+		"scope": "html",
+		"prefix": "keyboardType",
+		"body": "keyboardType=\"email\""
+	},
+	"{NS} Width Attribute": {
+		"scope": "html",
+		"prefix": "width",
+		"body": "width=\"\"",
+		"description": "Gets or sets the width used to measure and layout each child. Default value is Number.NaN, which does not restrict children."
+	},
+	"{NS} Height Attribute": {
+		"scope": "html",
+		"prefix": "height",
+		"body": "height=\"\"",
+		"description": "Gets or sets the height used to measure and layout each child. Default value is Number.NaN, which does not restrict children."
+	},
+	"{NS} Item Width Attribute": {
+		"scope": "html",
+		"prefix": "itemWidth",
+		"body": "itemWidth=\"\"",
+		"description": "Gets or sets the width used to measure and layout each child. Default value is Number.NaN, which does not restrict children."
+	},
+	"{NS} Item Height Attribute": {
+		"scope": "html",
+		"prefix": "itemHeight",
+		"body": "itemHeight=\"\"",
+		"description": "Gets or sets the height used to measure and layout each child. Default value is Number.NaN, which does not restrict children."
+	},
+	"{NS} Item Loaded Attribute": {
+		"scope": "html",
+		"prefix": "loaded",
+		"body": "(loaded)=\"onLoad(\\$event)\"",
+	},
+	// gestures attributes
+	"{NS} tap Attribute": {
+		"scope": "html",
+		"prefix": "tap",
+		"body": "(tap)=\"${1:onTap()}\"",
+		"description": "Action: Briefly touch the screen."
+	},
+	"{NS} Vue tap Attribute": {
+		"scope": "html",
+		"prefix": "@tap",
+		"body": "@tap=\"\"",
+		"description": "Action: Briefly touch the screen."
+	},
+	"{NS} doubleTap Attribute": {
+		"scope": "html",
+		"prefix": "doubleTap",
+		"body": "(doubleTap)=\"${1:onDoubleTap(\\$event)}\"",
+		"description": "Action: Two taps in a quick succession."
+	},
+	"{NS} longPress Attribute": {
+		"scope": "html",
+		"prefix": "longPress",
+		"body": "(longPress)=\"${1:onLongPress(\\$event)}\"",
+		"description": "Action: Press your finger against the screen for a few moments"
+	},
+	"{NS} pan Attribute": {
+		"scope": "html",
+		"prefix": "pan",
+		"body": "(pan)=\"${1:onPan()}\"",
+		"description": "Action: Press your finger down and immediately start moving it around. Pans are executed more slowly and allow for more precision, and the screen stops responding as soon as the finger is lifted off it."
+	},
+	"{NS} pinch Attribute": {
+		"scope": "html",
+		"prefix": "pinch",
+		"body": "(pinch)=\"${1:onPinch()}\"",
+		"description": "Action: Touch the screen using two of your fingers, then move them towards each other or away from each other."
+	},
+	"{NS} rotation Attribute": {
+		"scope": "html",
+		"prefix": "rotation",
+		"body": "(rotation)=\"${1:onRotation()}\"",
+		"description": "Action: Touch the screen using two of your fingers, then rotate them simultaneously left or right."
+	},
+	"{NS} swipe Attribute": {
+		"scope": "html",
+		"prefix": "swipe",
+		"body": "(swipe)=\"${1:onSwipe()}\"",
+		"description": "Action: Swiftly slide your finger across the screen. Swipes are quick and affect the screen even after the finger is lifted off the screen."
+	},
+	"{NS} touch Attribute": {
+		"scope": "html",
+		"prefix": "touch",
+		"body": "(touch)=\"{1:onTouch()}\"",
+		"description": "Action: This is a general purpose gesture that is triggered whenever a pointer (usually a finger) has performed a touch action (up, down, move or cancel). TouchGestureEventData provides information about all the pointers currently on the screen and their position inside the view that triggered the event."
+	},
+	"{NS} is user interaction enabled Attribute": {
+		"scope": "html",
+		"prefix": "isUserInteractionEnabled",
+		"body": "[isUserInteractionEnabled]=\"{1|true,false|}\"",
+		"description": "Gets or sets a boolean value indicating whether the user can interact with the view. Does not affect the appearance of the view. The default value is true."
+	},
+	"{NS} is element for actions enabled Attribute": {
+		"scope": "html",
+		"prefix": "isEnabled",
+		"body": "[isEnabled]=\"{1|true,false|}\"",
+		"description": "Gets or sets a boolean value indicating whether the view is enabled. Affects the appearance of the view. The default value is true."
+	},
+	"{NS} is pass through parent enabled Attribute": {
+		"scope": "html",
+		"prefix": "isPassThroughParentEnabled",
+		"body": "[isPassThroughParentEnabled]=\"{1|true,false|}\"",
+		"description": "Gets or sets a value indicating whether touch events should pass through to a parent view of the layout container in case an interactive child view did not handle the event. Does not affect the appearance of the view. The default value is false."
+	},
+	// StackLayout properties
+	"{NS} orientation Attribute": {
+		"scope": "html",
+		"prefix": "orientation",
+		"body": "orientation=\"${1|vertical,horizontal|}\"",
+		"description": "Gets or sets a value indicating whether the child items should be stacked in the horizontal or vertical direction. Possible values are vertical and horizontal. The default value is vertical."
+	},
+	// GridLayout properties
+	"{NS} Row Attribute": {
+		"scope": "html",
+		"prefix": "row",
+		"body": "row=\"$0\"",
+		"description": "Gets or sets a value that indicates which row child content within a GridLayout it should appear in."
+	},
+	"{NS} Col Attribute": {
+		"scope": "html",
+		"prefix": "col",
+		"body": "col=\"$0\"",
+		"description": "Gets or sets a value that indicates which column child content within a GridLayout it should appear in."
+	},
+	"{NS} Rows Attribute": {
+		"scope": "html",
+		"prefix": "rows",
+		"body": "rows=\"$0\"",
+		"description": "A string value representing row heights delimited with commas. Row heights can be either an absolute number, auto or *. A number indicates an absolute row height, auto makes the row as high as its highest child, and * makes the row occupy all available vertical space."
+	},
+	"{NS} Colums Attribute": {
+		"scope": "html",
+		"prefix": "colums",
+		"body": "colums=\"$0\"",
+		"description": "A string value representing column widths delimited with commas. Column widths can be either an absolute number, auto or *. A number indicates an absolute column width, auto makes the column as wide as its widest child, and * makes the column occupy all available horizontal space."
+	},
+	"{NS} Colspan Attribute": {
+		"scope": "html",
+		"prefix": "colSpan",
+		"body": "colSpan=\"${1:number}\"",
+		"description": "Gets or sets a value that indicates the total number of colums that child content spaNS within a GridLayout."
+	},
+	"{NS} Rowspan Attribute": {
+		"scope": "html",
+		"prefix": "rowSpan",
+		"body": "rowSpan=\"${1:number}\"",
+		"description": "Gets or sets a value that indicates the total number of rows that child content spaNS within a GridLayout."
+	},
+	// DockLayout properties
+	"{NS} DockLayout Dock Attribute": {
+		"scope": "html",
+		"prefix": "dock",
+		"body": "dock=\"${1|top,right,bottom,left|}\"",
+		"description": "Specifies the Dock position of a child element that is iNSide a DockLayout. Possible values are left, top, right and bottom."
+	},
+	"{NS} Docklayout strechLastChild Attribute": {
+		"scope": "html",
+		"prefix": "stretchLastChild",
+		"body": "stretchLastChild=\"true\"",
+		"description": "Gets or sets a value that indicates whether the last child element within a DockLayout stretches to fill the remaining available space. The default value is true."
+	},
+	// FlexboxLayout properties
+	"{NS} FlexboxLayout flexDirection Attribute": {
+		"scope": "html",
+		"prefix": "flexDirection",
+		"body": "flexDirection=\"\"",
+		"description": "Gets or sets a value indicating the direction flex items are placed in the flex container. The flexDirection property accepts 4 different values: row (same as text direction), row-reverse (opposite to text direction), column (same as row but top to bottom), and column-reverse (same as row-reverse top to bottom). The default value is row."
+	},
+	"{NS} FlexboxLayout flexWrap Attribute": {
+		"scope": "html",
+		"prefix": "flexWrap",
+		"body": "flexWrap=\"\"",
+		"description": "Gets or sets a value indicating whether the flex items are forced in a single line or can be flowed into multiple lines. If set to multiple lines, it also defines the cross-axis which determines the direction new lines are stacked in. The flexWrap property accepts 3 different values: nowrap (single-line which may cause the container to overflow), wrap (multi-lines, direction is defined by flexDirection), and wrap-reverse (multi-lines, opposite to direction defined by flexDirection). The default value is nowrap.."
+	},
+	"{NS} FlexboxLayout justifyContent Attribute": {
+		"scope": "html",
+		"prefix": "justifyContent",
+		"body": "justifyContent=\"\"",
+		"description": "Gets or sets a value indicating the alignment along the main axis. It helps distribute extra free space leftover when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line. The justifyContent property accepts 5 different values: flex-start (items are packed toward the start line), flex-end (items are packed toward to end line), center (items are centered along the line), space-between (items are evenly distributed in the line; first item is on the start line, last item on the end line), and space-around (items are evenly distributed in the line with equal space around them). The default value is flex-start."
+	},
+	"{NS} FlexboxLayout alignItems Attribute": {
+		"scope": "html",
+		"prefix": "alignItems",
+		"body": "alignItems=\"\"",
+		"description": "Gets or sets a value indicating how flex items are laid out along the cross axis on the current line. You can think of it as the justifyContent version for the cross-axis (perpendicular to the main-axis). The alignItems property accepts 5 different values: flex-start (cross-start margin edge of the items is placed on the cross-start line), flex-end (cross-end margin edge of the items is placed on the cross-end line), center (items are centered in the cross-axis), baseline (items are aligned such as their baselines align), stretch (stretch to fill the container but still respect min-width/max-width). The default value is stretch."
+	},
+	"{NS} FlexboxLayout alignContent Attribute": {
+		"scope": "html",
+		"prefix": "alignContent",
+		"body": "alignContent=\"\"",
+		"description": "Gets or sets a value that helps aligning a flex container's lines within it when there is extra space in the cross-axis, similar to how justifyContent aligns individual items within the main-axis. The alignContent property accepts 6 different values: flex-start (lines packed to the start of the container), flex-end (lines packed to the end of the container), center (lines packed to the center of the container), space-between (lines evenly distributed; the first line is at the start of the container while the last one is at the end), space-around (lines evenly distributed with equal space between them), and stretch (lines stretch to take up the remaining space). The default value is stretch. This property has no effect when the flexbox has only a single line."
+	},
+	"{NS} FlexboxLayout order Attribute": {
+		"scope": "html",
+		"prefix": "order",
+		"body": "order=\"\"",
+		"description": "Gets or sets a value that changes the default ordering of flex items."
+	},
+	"{NS} FlexboxLayout flexGrow Attribute": {
+		"scope": "html",
+		"prefix": "flexGrow",
+		"body": "flexGrow=\"\"",
+		"description": "Gets or sets a unitless value that serves as a proportion indicating whether the flex item is able to grow if necessary. It dictates what amount of the available space inside the flex container the item should take up."
+	},
+	"{NS} FlexboxLayout flexShrink Attribute": {
+		"scope": "html",
+		"prefix": "flexShrink",
+		"body": "flexShrink=\"\"",
+		"description": "Gets or sets a value indicating the 'flex shrink factor', which determines how much the flex item will shrink relative to the rest of the flex items in the flex container when there is not enough space on the row. When omitted, it is set to 1 and the flex shrink factor is multiplied by the flex basis when distributing negative space."
+	},
+	"{NS} FlexboxLayout alignSelf Attribute": {
+		"scope": "html",
+		"prefix": "alignSelf",
+		"body": "alignSelf=\"\"",
+		"description": "Gets or sets a value that makes it possible to override the alignItems value for specific flex items. This property accepts the same 5 values as the alignItems: flex-start (cross-start margin edge of the item is placed on the cross-start line), flex-end (cross-end margin edge of the item is placed on the cross-end line), center (item is centered in the cross-axis), baseline (items are aligned such as their baseline are aligned), and stretch (stretch to fill the container but still respect min-width / max-width). The default value is stretch."
+	},
+	"{NS} FlexboxLayout flexWrapBefore Attribute": {
+		"scope": "html",
+		"prefix": "flexWrapBefore",
+		"body": "flexWrapBefore=\"\"",
+		"description": "Gets or sets a boolean value controlling item wrapping. Setting it to true on flexbox item will force it to wrap on a new line. The default value is false. This property is not part of the official flexbox specification."
+	},
+	// Platform specific
+	"{NS} Specific HTML markup": {
+		"scope": "html",
+		"prefix": "ios android",
+		"body": "<${1|ios,android|}>$0<$1>",
+		"description": "Platform-specific HTML markup blocks."
+	},
+	"{NS} Specific iOS HTML attribute": {
+		"scope": "html",
+		"prefix": "ios:",
+		"body": "ios:${1:style}",
+		"description": "iOS-specific HTML attribute."
+	},
+	"{NS} Specific Android HTML attribute": {
+		"scope": "html",
+		"prefix": "android:",
+		"body": "android:${1:style}",
+		"description": "Android-specific HTML attribute."
+	}
+}
